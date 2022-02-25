@@ -1,0 +1,96 @@
+.pop-up {
+  --transitionTime: 0.3s;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  height: 100%;
+  z-index: 100;
+  background-color: rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  overflow-y: auto;
+  overflow-x: hidden;
+  text-align: center;
+  -webkit-transition: var(--transitionTime);
+  transition: var(--transitionTime);
+  opacity: 0;
+  visibility: hidden;
+}
+
+.pop-up::before {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  height: 100%;
+}
+
+.pop-up__container {
+  position: relative;
+  width: 500px;
+  margin: auto auto;
+  display: none;
+  vertical-align: middle;
+  background-color: #1e1e24;
+  border-radius: 20px;
+  cursor: default;
+  text-align: left;
+  padding: 25px 30px;
+  color: white;
+}
+
+.pop-up__title {
+  font-size: 32px;
+  margin: 0 0 20px 0;
+}
+
+.pop-up-lorem p {
+  margin: 0;
+}
+
+.pop-up-lorem span {
+  padding: 10px 0 0 0;
+  font-size: 14px;
+}
+
+.open {
+  opacity: 1;
+  visibility: visible;
+  -webkit-transition: opacity var(--transitionTime), var(--transitionTime);
+  transition: opacity var(--transitionTime), var(--transitionTime);
+}
+
+.pop-up-open {
+  display: inline-block;
+}
+
+.fade {
+  -webkit-transition: opacity var(--transitionTime);
+  transition: opacity var(--transitionTime);
+  opacity: 0;
+}
+
+.fade.animate-open {
+  opacity: 1;
+  -webkit-transition: opacity var(--transitionTime);
+  transition: opacity var(--transitionTime);
+}
+
+.content {
+  min-height: 200vh;
+}
+
+.disable-scroll {
+  position: relative;
+  overflow: hidden;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+}
+
+.closeTag {
+  display: none;
+}
+/*# sourceMappingURL=pop-up.css.map */

@@ -1,0 +1,30 @@
+//- include - вставка кода
+//- extends - воспринимается как шаблон
+block vars
+  - var siteTitle = 'Plugin for pop-ups';
+doctype html
+//- Просто вставляем переменную
+html(lang=lang)
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
+    link(rel="stylesheet" href="./css/pop-up.css")
+    
+    title #{siteTitle}
+  body 
+
+    .wrapper
+      main.page
+        button.addBtn(data-path="first", data-animation='fadInUP', data-speed='700') OPEN POP-UP
+        //- pop-up
+        .pop-up
+          .pop-up__container(data-target="first")
+            .pop-up__content
+                  .pop-up__title.h2.pop-up-close Menu
+                  .pop-up__body
+                      .pop-up-lorem #[p Тут должно было быть содержимое блока, но увы, разработчику было лень придумывать дизайн для модального окна и верстать его, поэтому теперь тут красуется эта прекрасная и трудночитаемая надпись, да можно было пуститься в рассуждения о философии фронтенда или жизни, но философия её такова что 80% пройцентов результата приносят 20% действий ]
+                        br 
+                        | #[span P.s Да, мне было не лень это придумывать]
+        //- pop-up
+    script(src="../popUp.js")
